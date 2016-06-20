@@ -21,16 +21,55 @@
 
         public function listarEquipoCategoria(){
             $sql = "select c.ID_CLUB as ID_CLUB, c.NOM_CLUB as NOM_CLUB, 
-                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT, dis.NOM_DIS as NOM_DIS
+                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT
                     from club as c 
                     INNER join relationship_31 as rel
                     on c.ID_CLUB = rel.ID_CLUB
                     INNER join categoria as cat
                     on rel.ID_CAT = cat.ID_CAT
-                    INNER join tener5 as t5
-                    on t5.ID_DIS = cat.ID_CAT
-                    INNER join disciplina as dis
-                    on dis.ID_DIS = t5.ID_DIS;";
+                    WHERE cat.ID_CAT=1;";
+            $info = array();
+            $sqlPreparada = $this->con->prepararSentencia($sql, $info);
+            $lista=$sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
+            return $lista;
+        }
+        public function listarEquipoSenior(){
+            $sql = "select c.ID_CLUB as ID_CLUB, c.NOM_CLUB as NOM_CLUB, 
+                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT
+                    from club as c 
+                    INNER join relationship_31 as rel
+                    on c.ID_CLUB = rel.ID_CLUB
+                    INNER join categoria as cat
+                    on rel.ID_CAT = cat.ID_CAT
+                    WHERE cat.ID_CAT=2;";
+            $info = array();
+            $sqlPreparada = $this->con->prepararSentencia($sql, $info);
+            $lista=$sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
+            return $lista;
+        }
+        public function listarEquipoMasculino(){
+            $sql = "select c.ID_CLUB as ID_CLUB, c.NOM_CLUB as NOM_CLUB, 
+                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT
+                    from club as c 
+                    INNER join relationship_31 as rel
+                    on c.ID_CLUB = rel.ID_CLUB
+                    INNER join categoria as cat
+                    on rel.ID_CAT = cat.ID_CAT
+                    WHERE cat.ID_CAT=3;";
+            $info = array();
+            $sqlPreparada = $this->con->prepararSentencia($sql, $info);
+            $lista=$sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
+            return $lista;
+        }
+        public function listarEquipoFemenino(){
+            $sql = "select c.ID_CLUB as ID_CLUB, c.NOM_CLUB as NOM_CLUB, 
+                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT
+                    from club as c 
+                    INNER join relationship_31 as rel
+                    on c.ID_CLUB = rel.ID_CLUB
+                    INNER join categoria as cat
+                    on rel.ID_CAT = cat.ID_CAT
+                    WHERE cat.ID_CAT=4;";
             $info = array();
             $sqlPreparada = $this->con->prepararSentencia($sql, $info);
             $lista=$sqlPreparada->fetchAll(PDO::FETCH_ASSOC);

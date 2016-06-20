@@ -20,9 +20,15 @@
 			$visEquipo = new visEquipo();
             $visEquipoCategoria = new visEquipoCategoria();
 			$return=$visEquipo->listarEquipos($modEquipo->listarEquipos());
-            $return2=$visEquipoCategoria->listarEquipoCategoria($modEquipo->listarEquipoCategoria());
-			return "pagina de prueba<br/><hr/><br/>".$return2;
-		}
+            $returnmaster=$visEquipoCategoria->listarEquipoCategoria($modEquipo->listarEquipoCategoria());
+            $returnsenior=$visEquipoCategoria->listarEquipoSenior($modEquipo->listarEquipoSenior());
+            $returnmasculino=$visEquipoCategoria->listarEquipoMasculino($modEquipo->listarEquipoMasculino());
+            $returnfeme=$visEquipoCategoria->listarEquipoFemenino($modEquipo->listarEquipoFemenino());
+			return  "<br/>Master<br/><hr/><br/>".$returnmaster.
+                    "<br/>Senior<br/><hr/><br/>".$returnsenior.
+                    "<br/>Masculino<br/><hr/><br/>".$returnmasculino.
+                    "<br/>Femenino<br/><hr/><br/>".$returnfeme;
+        }
 		else{
 			header('Location: index.php');
 		}
