@@ -21,8 +21,13 @@
 
         public function listarEquipoCategoria(){
             $sql = "select c.ID_CLUB as ID_CLUB, c.NOM_CLUB as NOM_CLUB, 
-                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT
-                    from club as c 
+                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT,
+                    sp.CED_DEP as CED_DEP, dp.NOM_DEP as NOM_DEP
+                    from club as c
+                    INNER JOIN ser_parte as sp
+                    on c.ID_CLUB = sp.ID_CLUB
+                    INNER JOIN deportista as dp
+                    on dp.CED_DEP = sp.CED_DEP
                     INNER join relationship_31 as rel
                     on c.ID_CLUB = rel.ID_CLUB
                     INNER join categoria as cat
@@ -35,8 +40,13 @@
         }
         public function listarEquipoSenior(){
             $sql = "select c.ID_CLUB as ID_CLUB, c.NOM_CLUB as NOM_CLUB, 
-                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT
-                    from club as c 
+                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT,
+                    sp.CED_DEP as CED_DEP, dp.NOM_DEP as NOM_DEP
+                    from club as c
+                    INNER JOIN ser_parte as sp
+                    on c.ID_CLUB = sp.ID_CLUB
+                    INNER JOIN deportista as dp
+                    on dp.CED_DEP = sp.CED_DEP
                     INNER join relationship_31 as rel
                     on c.ID_CLUB = rel.ID_CLUB
                     INNER join categoria as cat
@@ -49,8 +59,13 @@
         }
         public function listarEquipoMasculino(){
             $sql = "select c.ID_CLUB as ID_CLUB, c.NOM_CLUB as NOM_CLUB, 
-                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT
-                    from club as c 
+                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT,
+                    sp.CED_DEP as CED_DEP, dp.NOM_DEP as NOM_DEP
+                    from club as c
+                    INNER JOIN ser_parte as sp
+                    on c.ID_CLUB = sp.ID_CLUB
+                    INNER JOIN deportista as dp
+                    on dp.CED_DEP = sp.CED_DEP
                     INNER join relationship_31 as rel
                     on c.ID_CLUB = rel.ID_CLUB
                     INNER join categoria as cat
@@ -63,8 +78,13 @@
         }
         public function listarEquipoFemenino(){
             $sql = "select c.ID_CLUB as ID_CLUB, c.NOM_CLUB as NOM_CLUB, 
-                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT
-                    from club as c 
+                    rel.ID_CAT as ID_CAT, cat.NOM_CAT as NOM_CAT,
+                    sp.CED_DEP as CED_DEP, dp.NOM_DEP as NOM_DEP
+                    from club as c
+                    INNER JOIN ser_parte as sp
+                    on c.ID_CLUB = sp.ID_CLUB
+                    INNER JOIN deportista as dp
+                    on dp.CED_DEP = sp.CED_DEP
                     INNER join relationship_31 as rel
                     on c.ID_CLUB = rel.ID_CLUB
                     INNER join categoria as cat

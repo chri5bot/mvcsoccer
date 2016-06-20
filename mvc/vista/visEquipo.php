@@ -25,6 +25,7 @@
                         <tr>
                             <th>ORD.</th>
                             <th>CLUB</td>
+                            <th>DEP.</td>
                         </tr>";
             $count = 0;
             foreach ($clubcategoria as $row){
@@ -32,6 +33,7 @@
                 $return.="<tr>
                             <td>".$count."</td>
                             <td>".$row['NOM_CLUB']."</td>
+                            <td>".$row['NOM_DEP']."</td>
                          </tr>";
             }
             $return.= " </table>
@@ -44,6 +46,7 @@
                         <tr>
                             <th>ORD.</th>
                             <th>CLUB</td>
+                            <th>DEP.</td>
                         </tr>";
             $count = 0;
             foreach ($clubcategoria as $row){
@@ -51,6 +54,7 @@
                 $return.="<tr>
                             <td>".$count."</td>
                             <td>".$row['NOM_CLUB']."</td>
+                            <td>".$row['NOM_DEP']."</td>
                          </tr>";
             }
             $return.= " </table>
@@ -63,6 +67,7 @@
                         <tr>
                             <th>ORD.</th>
                             <th>CLUB</td>
+                            <th>DEP</td>
                         </tr>";
             $count = 0;
             foreach ($clubcategoria as $row){
@@ -70,6 +75,7 @@
                 $return.="<tr>
                             <td>".$count."</td>
                             <td>".$row['NOM_CLUB']."</td>
+                            <td>".$row['NOM_DEP']."</td>
                          </tr>";
             }
             $return.= " </table>
@@ -82,6 +88,7 @@
                         <tr>
                             <th>ORD.</th>
                             <th>CLUB</td>
+                            <th>DEP</td>
                         </tr>";
             $count = 0;
             foreach ($clubcategoria as $row){
@@ -89,6 +96,7 @@
                 $return.="<tr>
                             <td>".$count."</td>
                             <td>".$row['NOM_CLUB']."</td>
+                            <td>".$row['NOM_DEP']."</td>
                          </tr>";
             }
             $return.= " </table>
