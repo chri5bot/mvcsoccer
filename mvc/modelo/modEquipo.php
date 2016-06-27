@@ -176,4 +176,29 @@ class modEquipo
         $lista = $sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
     }
+
+    public function listarEquipoSenior()
+    {
+        $sql = "SELECT  C.NOM_CLUB AS NOM_CLUB,
+                            DP.NOM_DEP AS NOM_DEP,
+                            DJV.NTARJA_DETV AS AMA, DJV.NTARJR_DETV AS ROJ
+                            FROM CLUB AS C
+                            INNER JOIN SER_PARTE AS SP
+                            ON C.ID_CLUB = SP.ID_CLUB
+                            INNER JOIN DEPORTISTA AS DP
+                            ON DP.CED_DEP = SP.CED_DEP
+                            INNER JOIN SUBCATEGORIA AS SCAT
+                            ON DP.ID_SCAT = SCAT.ID_SCAT
+                            INNER JOIN CATEGORIA AS CAT
+                            ON SCAT.ID_CAT = CAT.ID_CAT
+                            INNER JOIN CAMBIO AS CAM
+                            ON CAM.CED_DEP = DP.CED_DEP
+                            INNER JOIN DETALLE_JUGADOR_VOCALIA AS DJV
+                            ON CAM.ID_DETV = DJV.ID_DETV
+                            WHERE CAT.ID_CAT=2 AND (DJV.NTARJA_DETV>0 OR DJV.NTARJR_DETV>0);";
+        $info = array();
+        $sqlPreparada = $this->con->prepararSentencia($sql, $info);
+        $lista = $sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
 }

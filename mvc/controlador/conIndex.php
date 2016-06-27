@@ -19,6 +19,7 @@ if (isset($opcion)) {
         $visEquipoCategoria = new visEquipoCategoria();
         $return = $visEquipo->listarEquipos($modEquipo->listarEquipos());
         $returnmaster = $visEquipoCategoria->listarEquipoCategoria($modEquipo->listarEquipoCategoria());
+        $returnsenior = $visEquipoCategoria->listarEquipoCategoria($modEquipo->listarEquipoSenior());
         $returninfantil = $visEquipoCategoria->listarEquipoCategoria($modEquipo->listarEquipoInfantil());
         $returnmaxima = $visEquipoCategoria->listarEquipoCategoria($modEquipo->listarEquipoSeniorMaxima());
         $returnprimera = $visEquipoCategoria->listarEquipoCategoria($modEquipo->listarEquipoSeniorPrimera());
@@ -26,6 +27,7 @@ if (isset($opcion)) {
         $returnfeme = $visEquipoCategoria->listarEquipoCategoria($modEquipo->listarEquipoFemenino());
         return "<br/>Equipos<br/><hr/><br/>" . $return .
         "<br/>Master<br/><hr/><br/>" . $returnmaster .
+        "<br/>Senior<br/><hr/><br/>" . $returnsenior .
         "<br/>Maxima<br/><hr/><br/>" . $returnmaxima .
         "<br/>Primera<br/><hr/><br/>" . $returnprimera .
         "<br/>Segunda<br/><hr/><br/>" . $returnsegunda .
