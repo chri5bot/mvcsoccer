@@ -43,7 +43,7 @@ class modEquipo
                     ON CAM.CED_DEP = DP.CED_DEP
                     INNER JOIN DETALLE_JUGADOR_VOCALIA AS DJV
                     ON CAM.ID_DETV = DJV.ID_DETV
-                    WHERE CAT.ID_CAT=1;";
+                    WHERE CAT.ID_CAT=1 AND (DJV.NTARJA_DETV>0 OR DJV.NTARJR_DETV>0);";
         $info = array();
         $sqlPreparada = $this->con->prepararSentencia($sql, $info);
         $lista = $sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
@@ -68,7 +68,7 @@ class modEquipo
                             ON CAM.CED_DEP = DP.CED_DEP
                             INNER JOIN DETALLE_JUGADOR_VOCALIA AS DJV
                             ON CAM.ID_DETV = DJV.ID_DETV
-                            WHERE SCAT.ID_SCAT=1;";
+                            WHERE SCAT.ID_SCAT=1 AND (DJV.NTARJA_DETV>0 OR DJV.NTARJR_DETV>0);";
         $info = array();
         $sqlPreparada = $this->con->prepararSentencia($sql, $info);
         $lista = $sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
@@ -93,7 +93,7 @@ class modEquipo
                             ON CAM.CED_DEP = DP.CED_DEP
                             INNER JOIN DETALLE_JUGADOR_VOCALIA AS DJV
                             ON CAM.ID_DETV = DJV.ID_DETV
-                            WHERE SCAT.ID_SCAT=2;";
+                            WHERE SCAT.ID_SCAT=2 AND (DJV.NTARJA_DETV>0 OR DJV.NTARJR_DETV>0);";
         $info = array();
         $sqlPreparada = $this->con->prepararSentencia($sql, $info);
         $lista = $sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
@@ -118,7 +118,7 @@ class modEquipo
                             ON CAM.CED_DEP = DP.CED_DEP
                             INNER JOIN DETALLE_JUGADOR_VOCALIA AS DJV
                             ON CAM.ID_DETV = DJV.ID_DETV
-                            WHERE SCAT.ID_SCAT=3;";
+                            WHERE SCAT.ID_SCAT=3 AND (DJV.NTARJA_DETV>0 OR DJV.NTARJR_DETV>0);";
         $info = array();
         $sqlPreparada = $this->con->prepararSentencia($sql, $info);
         $lista = $sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
@@ -144,7 +144,7 @@ class modEquipo
                             ON CAM.CED_DEP = DP.CED_DEP
                             INNER JOIN DETALLE_JUGADOR_VOCALIA AS DJV
                             ON CAM.ID_DETV = DJV.ID_DETV
-                            WHERE CAT.ID_CAT=3;";
+                            WHERE CAT.ID_CAT=3 AND (DJV.NTARJA_DETV>0 OR DJV.NTARJR_DETV>0);";
         $info = array();
         $sqlPreparada = $this->con->prepararSentencia($sql, $info);
         $lista = $sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
@@ -170,7 +170,7 @@ class modEquipo
                                 ON CAM.CED_DEP = DP.CED_DEP
                                 INNER JOIN DETALLE_JUGADOR_VOCALIA AS DJV
                                 ON CAM.ID_DETV = DJV.ID_DETV
-                                WHERE CAT.ID_CAT=4;";
+                                WHERE CAT.ID_CAT=4 AND (DJV.NTARJA_DETV>0 OR DJV.NTARJR_DETV>0);";
         $info = array();
         $sqlPreparada = $this->con->prepararSentencia($sql, $info);
         $lista = $sqlPreparada->fetchAll(PDO::FETCH_ASSOC);
