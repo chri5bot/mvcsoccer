@@ -1,5 +1,5 @@
 <?php
-	return "
+return "
 		<html>
 			<head>
 			<meta charset='UTF-8'>
