@@ -31,9 +31,6 @@ if (isset($opcion)) {
         "<br/>Segunda<br/><hr/><br/>" . $returnsegunda .
         "<br/>Infantil<br/><hr/><br/>" . $returninfantil .
         "<br/>Femenino<br/><hr/><br/>" . $returnfeme;
-//                    "<br/>Senior<br/><hr/><br/>".$returnsenior.
-//                    "<br/>Masculino<br/><hr/><br/>".$returnmasculino.
-//                    "<br/>Femenino<br/><hr/><br/>".$returnfeme;
     } else {
         header('Location: index.php');
     }
